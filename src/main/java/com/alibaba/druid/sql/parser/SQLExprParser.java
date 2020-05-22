@@ -27,6 +27,7 @@ import com.alibaba.druid.sql.ast.SQLDataType;
 import com.alibaba.druid.sql.ast.SQLDataTypeImpl;
 import com.alibaba.druid.sql.ast.SQLDataTypeRefExpr;
 import com.alibaba.druid.sql.ast.SQLExpr;
+import com.alibaba.druid.sql.ast.SQLExprImpl;
 import com.alibaba.druid.sql.ast.SQLLimit;
 import com.alibaba.druid.sql.ast.SQLName;
 import com.alibaba.druid.sql.ast.SQLObject;
@@ -1757,8 +1758,7 @@ public class SQLExprParser extends SQLParser {
                         lexer.nextToken();
                     }
                 } else {
-                    SQLIntegerExpr rowsExpr = (SQLIntegerExpr) this.primary();
-                    over.setWindowing(rowsExpr);
+                    over.setWindowing(this.primary());
 
                     if (lexer.identifierEquals(FnvHash.Constants.PRECEDING)) {
                         over.setWindowingPreceding(true);
