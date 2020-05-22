@@ -488,6 +488,7 @@ public final class FnvHash {
         long STORED = fnv1a_64_lower("STORED");
         long VIRTUAL = fnv1a_64_lower("VIRTUAL");
         long UNSIGNED = fnv1a_64_lower("UNSIGNED");
+        long SIGNED = fnv1a_64_lower("SIGNED");
         long ZEROFILL = fnv1a_64_lower("ZEROFILL");
         long GLOBAL = fnv1a_64_lower("GLOBAL");
         long SESSION = fnv1a_64_lower("SESSION");

@@ -2716,6 +2716,13 @@ public class SQLExprParser extends SQLParser {
             }
         }
 
+        if (typeNameHashCode == FnvHash.Constants.SIGNED) {
+            if (lexer.token == Token.IDENTIFIER) {
+                typeName += (' ' + lexer.stringVal());
+                lexer.nextToken();
+            }
+        }
+
         if (isCharType(typeName)) {
             SQLCharacterDataType charType = new SQLCharacterDataType(typeName);
 
